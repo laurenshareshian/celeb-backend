@@ -72,7 +72,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>net.celebapp.matchmaker</mainClass>
+							<mainClass>net.celebapp.matchmaker.MatchmakerApplication</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
