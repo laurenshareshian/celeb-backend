@@ -1,0 +1,5 @@
+net/celebapp/matchmaker/MatchmakerApplication.class
+net/celebapp/matchmaker/DummyMatchesRepository.class
+net/celebapp/matchmaker/DummyMatchesController.class
+net/celebapp/matchmaker/DummyMatchesEntity.class
+net/celebapp/matchmaker/WebConfig.class
