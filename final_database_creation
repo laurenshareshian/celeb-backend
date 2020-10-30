@@ -64,3 +64,5 @@ INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profil
 INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (2, 4, 'yo');
 INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (3, 4, 'hey');
 INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (4, 3, 'hola');
+
+heroku config:add JAVA_HOME=/usr/lib/jvm/java-11-openjdk-devel
