@@ -42,6 +42,7 @@ CREATE TABLE preferences (
   preferences_id SERIAL UNIQUE,
   age_min int,
   age_max int,
+  gender varchar(45),
   fk_profile_id int NOT NULL,
   FOREIGN KEY (fk_profile_id) REFERENCES profile (profile_id)
 );
