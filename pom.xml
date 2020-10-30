@@ -14,9 +14,9 @@
 	<name>matchmaker</name>
 	<description>matchmaker project</description>
 
-	<properties>
-		<java.version>12</java.version>
-	</properties>
+<!--	<properties>-->
+<!--		<java.version>12</java.version>-->
+<!--	</properties>-->
 
 	<dependencies>
 		<dependency>
