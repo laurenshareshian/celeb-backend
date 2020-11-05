@@ -38,7 +38,34 @@ public class ProfileController {
 		
 		return profileEntity;
 	}
-	
+
+    @GetMapping("/get-admirers/{profileId}")
+    public List<ProfileEntity> getAdmirersById(@PathVariable(value = "profileId") Integer profileId)
+
+    {
+        List<ProfileEntity> profileEntity = profileRepository.findAdmirersById(profileId);
+
+        return profileEntity;
+    }
+
+    @GetMapping("/get-matches/{profileId}")
+    public List<ProfileEntity> getMatchesById(@PathVariable(value = "profileId") Integer profileId)
+
+    {
+        List<ProfileEntity> profileEntity = profileRepository.findMatchesById(profileId);
+
+        return profileEntity;
+    }
+
+    @GetMapping("/get-compatibles/{profileId}")
+    public List<ProfileEntity> getCompatiblesById(@PathVariable(value = "profileId") Integer profileId)
+
+    {
+        List<ProfileEntity> profileEntity = profileRepository.findCompatiblesById(profileId);
+
+        return profileEntity;
+    }
+
     @PostMapping("/create-profiles")
     public ProfileEntity createProfile(@RequestBody ProfileEntity profile) {
        
