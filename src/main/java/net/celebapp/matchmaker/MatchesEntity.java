@@ -33,7 +33,7 @@ public class MatchesEntity {
 	    public int getFkProfileId() {
 	        return fkProfileId;
 	    }
-	    public void setFkProfileId(Integer matchesId) {
+	    public void setFkProfileId(Integer fkProfileId) {
 	        this.fkProfileId = fkProfileId;
 	    }
 	 

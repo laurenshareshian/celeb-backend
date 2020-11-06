@@ -15,9 +15,12 @@ public class ProfileEntity {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)	
 	    private Integer profileId;
 	    
-	    @Column(name = "name", nullable = false)
-	    private String name;
-	    
+	    @Column(name = "first_name", nullable = false)
+	    private String firstName;
+
+		@Column(name = "last_name", nullable = false)
+		private String lastName;
+
 	    @Column(name = "gender", nullable = false)
 	    private String gender;
 	    
@@ -30,15 +33,16 @@ public class ProfileEntity {
 		@Column(name = "bio", nullable = false)
 		private String bio;
 
-		@Column(name = "fkEmailId", nullable = false)
+		@Column(name = "fk_email_id", nullable = false)
 		private Integer fkEmailId;
 
 	    public ProfileEntity() {
 	  
 	    }
 	 
-	    public ProfileEntity(String name, String gender, Integer age, String celebStatus, String bio, Integer fkEmailId) {
-	         this.name = name;
+	    public ProfileEntity(String firstName, String lastName, String gender, Integer age, String celebStatus, String bio, Integer fkEmailId) {
+	         this.firstName = firstName;
+	         this.lastName = lastName;
 	         this.gender = gender;
 	         this.age = age;
 	         this.celebStatus = celebStatus;
@@ -54,13 +58,19 @@ public class ProfileEntity {
 	        this.profileId = profileId;
 	    }
 	 
-	   	public String getName() {
-	        return name;
+	   	public String getFirstName() {
+	        return firstName;
 	    }
-	    public void setName(String name) {
-	        this.name = name;
+	    public void setFirstName(String firstName) {
+	        this.firstName = firstName;
 	    }
-	 
+
+		public String getLastName() {
+			return lastName;
+		}
+		public void setLastName(String lastName) {
+			this.lastName = lastName;
+		}
 	   
 	    public String getGender() {
 	        return gender;
@@ -100,7 +110,7 @@ public class ProfileEntity {
 
 	    @Override
 	    public String toString() {
-	        return "Profile [profileId=" + profileId + ", name=" + name + ", emailId=" + fkEmailId
+	        return "Profile [profileId=" + profileId + ", name=" + firstName + ", emailId=" + fkEmailId
 					+ ", age=" + age + ", gender=" + gender + ", bio=" + bio + ", celeb status=" + celebStatus + "]";
 	    }
 	 

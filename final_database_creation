@@ -31,24 +31,25 @@ INSERT INTO login (email, password) VALUES ('meryl', 'meryl');
 
 CREATE TABLE profile (
   profile_id SERIAL UNIQUE,
-  name varchar(45),
+  first_name varchar(45),
+  last_name varchar(45),
   age int,
   gender varchar(45),
   celeb_status varchar(45),
   bio varchar(45),
-  fk_email_id int,
+  fk_email_id int NOT NULL,
   FOREIGN KEY (fk_email_id) REFERENCES login (email_id));
 
-INSERT INTO profile (name, age, gender, celeb_status, bio, fk_email_id) VALUES ('admin_name', 25, 'M', 'Really Famous', 'I read good.', 1);
-INSERT INTO profile (name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Brad Pitt', 56, 'M', 'Multi-hyphenate', 'Long walks on the beach', 2);
-INSERT INTO profile (name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Ryan Gosling', 39, 'M', 'Super famous but taking a break', 'I like to dance and sing.', 3);
-INSERT INTO profile (name, age, gender, celeb_status, bio, fk_email_id) VALUES ('George Clooney', 59, 'M', 'Multi-hyphenate global star', 'I love Lake Como.', 4);
-INSERT INTO profile (name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Justin Bieber', 26, 'M', 'Singer', 'I love church.', 5);
-INSERT INTO profile (name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Selena Gomez', 28, 'F', 'Singer and Disney Star', 'I love Twitter.', 6);
-INSERT INTO profile (name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Demi Lovato', 28, 'F', 'Singer and Disney Star', 'I like drama', 7);
-INSERT INTO profile (name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Gwen Stefani', 51, 'F', 'Singer and Reality Star', 'Im just a girl.', 8);
-INSERT INTO profile (name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Natalie Portman', 39, 'F', 'Movie Star', 'I like being perfect.', 9);
-INSERT INTO profile (name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Meryl Streep', 71, 'F', 'Movie Star', 'I like looking at all of my Oscars.', 10);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('John', 'Doe', 25, 'M', 'Really Famous', 'I read good.', 1);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Brad', 'Pitt', 56, 'M', 'Multi-hyphenate', 'Long walks on the beach', 2);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Ryan', 'Gosling', 39, 'M', 'Super famous but taking a break', 'I like to dance and sing.', 3);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('George', 'Clooney', 59, 'M', 'Multi-hyphenate global star', 'I love Lake Como.', 4);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Justin', 'Bieber', 26, 'M', 'Singer', 'I love church.', 5);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Selena', 'Gomez', 28, 'F', 'Singer and Disney Star', 'I love Twitter.', 6);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Demi', 'Lovato', 28, 'F', 'Singer and Disney Star', 'I like drama', 7);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Gwen', 'Stefani', 51, 'F', 'Singer and Reality Star', 'Im just a girl.', 8);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Natalie', 'Portman', 39, 'F', 'Movie Star', 'I like being perfect.', 9);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Meryl', 'Streep', 71, 'F', 'Movie Star', 'I like looking at all of my Oscars.', 10);
 
 CREATE TABLE preferences (
   preferences_id SERIAL UNIQUE,
@@ -88,4 +89,4 @@ INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profil
 INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (6, 1, 'love');
 INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (7, 1, 'heyyy');
 INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (8, 1, 'like');
-heroku config:add JAVA_HOME=/usr/lib/jvm/java-11-openjdk-devel
+

@@ -13,7 +13,7 @@ public class LoginEntity {
 
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-		@Column(name="emailId")
+		@Column(name="email_id")
 	    private Integer emailId;
 	    
 	    @Column(name = "email", nullable = false)

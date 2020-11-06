@@ -79,7 +79,8 @@ public class ProfileController {
           @RequestBody ProfileEntity profileDetails) {
         ProfileEntity profile = profileRepository.findById(profileId).get();
 
-        profile.setName(profileDetails.getName());
+        profile.setFirstName(profileDetails.getFirstName());
+        profile.setLastName(profileDetails.getLastName());
         profile.setGender(profileDetails.getGender());
         profile.setAge(profileDetails.getAge());
         profile.setCelebStatus(profileDetails.getCelebStatus());
