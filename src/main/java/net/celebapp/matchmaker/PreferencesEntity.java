@@ -31,7 +31,7 @@ public class PreferencesEntity {
 	  
 	    }
 	 
-	    public PreferencesEntity(int ageMin, int ageMax, String gender, int fkProfileId) {
+	    public PreferencesEntity(Integer ageMin, Integer ageMax, String gender, int fkProfileId) {
 	         this.ageMin = ageMin;
 	         this.ageMax = ageMax;
 	         this.gender = gender;
@@ -47,13 +47,13 @@ public class PreferencesEntity {
 	    }
 	 
 	    public Integer getAgeMax() { return ageMax; }
-	    public void setAgeMax(int ageMax) {
+	    public void setAgeMax(Integer ageMax) {
 	        this.ageMax = ageMax;
 	    }
 
 
-		public int getAgeMin() { return ageMin; }
-		public void setAgeMin(int ageMin) {
+		public Integer getAgeMin() { return ageMin; }
+		public void setAgeMin(Integer ageMin) {
 		this.ageMin = ageMin;
 	}
 	 
