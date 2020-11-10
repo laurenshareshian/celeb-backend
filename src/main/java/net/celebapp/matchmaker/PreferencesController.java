@@ -29,15 +29,7 @@ public class PreferencesController {
 		return allPreferenceslist;
 		
 	}
-	
-//	@GetMapping("/get-preferences/{id}")
-//	public PreferencesEntity getPreferencesbyId(@PathVariable(value = "preferences_id") Integer preferencesId)
-//	{
-//		PreferencesEntity preferencesEntity = preferencesRepository.findByPreferencesId(preferencesId).get();
-//
-//		return preferencesEntity;
-//	}
-	
+
     @PostMapping("/create-preferences")
     public PreferencesEntity createPreferences(@RequestBody PreferencesEntity preferences) {
        
