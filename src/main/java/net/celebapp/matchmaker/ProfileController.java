@@ -79,12 +79,24 @@ public class ProfileController {
           @RequestBody ProfileEntity profileDetails) {
         ProfileEntity profile = profileRepository.findById(profileId).get();
 
-        profile.setFirstName(profileDetails.getFirstName());
-        profile.setLastName(profileDetails.getLastName());
-        profile.setGender(profileDetails.getGender());
-        profile.setAge(profileDetails.getAge());
-        profile.setCelebStatus(profileDetails.getCelebStatus());
-        profile.setBio(profileDetails.getBio());
+        if(profileDetails.getFirstName() != null) {
+            profile.setFirstName(profileDetails.getFirstName());
+        }
+        if(profileDetails.getLastName() != null) {
+            profile.setLastName(profileDetails.getLastName());
+        }
+        if(profileDetails.getGender() != null) {
+            profile.setGender(profileDetails.getGender());
+        }
+        if(profileDetails.getAge() != null) {
+            profile.setAge(profileDetails.getAge());
+        }
+        if(profileDetails.getBio() != null) {
+            profile.setBio(profileDetails.getBio());
+        }
+        if(profileDetails.getCelebStatus() != null) {
+            profile.setCelebStatus(profileDetails.getCelebStatus());
+        }
         final ProfileEntity updatedProfile = profileRepository.save(profile);
         return ResponseEntity.ok(updatedProfile);
     }

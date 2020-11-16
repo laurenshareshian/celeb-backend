@@ -29,15 +29,7 @@ public class PreferencesController {
 		return allPreferenceslist;
 		
 	}
-	
-//	@GetMapping("/get-preferences/{id}")
-//	public PreferencesEntity getPreferencesbyId(@PathVariable(value = "preferences_id") Integer preferencesId)
-//	{
-//		PreferencesEntity preferencesEntity = preferencesRepository.findByPreferencesId(preferencesId).get();
-//
-//		return preferencesEntity;
-//	}
-	
+
     @PostMapping("/create-preferences")
     public PreferencesEntity createPreferences(@RequestBody PreferencesEntity preferences) {
        
@@ -51,9 +43,15 @@ public class PreferencesController {
           @RequestBody PreferencesEntity preferencesDetails) {
         PreferencesEntity preferences = preferencesRepository.findById(preferencesId).get();
 
-        preferences.setAgeMin(preferencesDetails.getAgeMin());
-        preferences.setAgeMax(preferencesDetails.getAgeMax());
-        preferences.setGender(preferencesDetails.getGender());
+        if(preferencesDetails.getAgeMin() != null) {
+            preferences.setAgeMin(preferencesDetails.getAgeMin());
+        }
+        if(preferencesDetails.getAgeMax() != null) {
+            preferences.setAgeMax(preferencesDetails.getAgeMax());
+        }
+        if(preferencesDetails.getGender() != null) {
+            preferences.setGender(preferencesDetails.getGender());
+        }
         final PreferencesEntity updatedPreferences = preferencesRepository.save(preferences);
         return ResponseEntity.ok(updatedPreferences);
     }
