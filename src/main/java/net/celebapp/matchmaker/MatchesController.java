@@ -40,11 +40,10 @@ public class MatchesController {
 	}
 	
     @PostMapping("/create-matches")
-    public MatchesEntity createMatches(@RequestBody MatchesEntity match) {
-       
-    	 MatchesEntity savedMatches = matchesRepository.save(match);
-    	 
-    	 return savedMatches;
+    public String createMatches(@RequestBody MatchesEntity match) {
+
+		matchesRepository.addMatch(match.getFkProfileId(), match.getFkDreamProfileId(), match.getMessageToDreamProfile());
+		return "add match success";
     }
     
     @DeleteMapping("/delete-matches/{profileId}")
