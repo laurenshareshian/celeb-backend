@@ -24,9 +24,9 @@ import java.util.List;
 	List<ProfileEntity> findMatchesById(Integer profileId);
 
 	@Query(value = "SELECT * from profile " +
-			"WHERE gender = (SELECT gender FROM preferences WHERE fk_profile_id = 1) " +
-			"AND age BETWEEN (SELECT age_min FROM preferences WHERE fk_profile_id = 1) " +
-			"AND (SELECT age_max FROM preferences WHERE fk_profile_id = 1)", nativeQuery = true)
+			"WHERE gender = (SELECT gender FROM preferences WHERE fk_profile_id = ?1) " +
+			"AND age BETWEEN (SELECT age_min FROM preferences WHERE fk_profile_id = ?1) " +
+			"AND (SELECT age_max FROM preferences WHERE fk_profile_id = ?1)", nativeQuery = true)
 	List<ProfileEntity> findCompatiblesById(Integer profileId);
 }
 

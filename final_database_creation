@@ -2,15 +2,6 @@ DROP TABLE IF EXISTS matches;
 DROP TABLE IF EXISTS preferences;
 DROP TABLE IF EXISTS profile;
 DROP TABLE IF EXISTS login;
-DROP TABLE IF EXISTS dummy_matches;
-
-CREATE TABLE dummy_matches (
-  id SERIAL UNIQUE,
-  first_name varchar(45),
-  last_name varchar(45)
-);
-INSERT INTO dummy_matches (first_name, last_name) VALUES ('Romeo', 'Doe');
-INSERT INTO dummy_matches (first_name, last_name) VALUES ('Juliet', 'Smith');
 
 CREATE TABLE login (
   email_id SERIAL UNIQUE,
