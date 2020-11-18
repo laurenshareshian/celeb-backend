@@ -9,7 +9,7 @@ CREATE TABLE login (
   password varchar(45)
 );
 
-INSERT INTO login (email, password) VALUES ('admin', 'admin');
+INSERT INTO login (email, password) VALUES ('leo@gmail.com', 'leo');
 INSERT INTO login (email, password) VALUES ('brad', 'brad');
 INSERT INTO login (email, password) VALUES ('ryan', 'ryan');
 INSERT INTO login (email, password) VALUES ('george', 'george');
@@ -28,19 +28,20 @@ CREATE TABLE profile (
   gender varchar(45),
   celeb_status varchar(45),
   bio varchar(45),
+  pic_url varchar(200),
   fk_email_id int NOT NULL,
   FOREIGN KEY (fk_email_id) REFERENCES login (email_id));
 
-INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('John', 'Doe', 25, 'M', 'Really Famous', 'I read good.', 1);
-INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Brad', 'Pitt', 56, 'M', 'Multi-hyphenate', 'Long walks on the beach', 2);
-INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Ryan', 'Gosling', 39, 'M', 'Super famous but taking a break', 'I like to dance and sing.', 3);
-INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('George', 'Clooney', 59, 'M', 'Multi-hyphenate global star', 'I love Lake Como.', 4);
-INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Justin', 'Bieber', 26, 'M', 'Singer', 'I love church.', 5);
-INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Selena', 'Gomez', 28, 'F', 'Singer and Disney Star', 'I love Twitter.', 6);
-INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Demi', 'Lovato', 28, 'F', 'Singer and Disney Star', 'I like drama', 7);
-INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Gwen', 'Stefani', 51, 'F', 'Singer and Reality Star', 'Im just a girl.', 8);
-INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Natalie', 'Portman', 39, 'F', 'Movie Star', 'I like being perfect.', 9);
-INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, fk_email_id) VALUES ('Meryl', 'Streep', 71, 'F', 'Movie Star', 'I like looking at all of my Oscars.', 10);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, pic_url, fk_email_id) VALUES ('Leonardo', 'Dicaprio', 46, 'M', 'Titanically famous', 'I love the environment and yachts.', 'https://cdn.artphotolimited.com/images/5c77db4dea7f855052aeb269/1000x1000/dicaprio-leonardo.jpg', 1);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, pic_url, fk_email_id) VALUES ('Brad', 'Pitt', 56, 'M', 'Multi-hyphenate', 'Long walks on the beach', 'https://wwd.com/wp-content/uploads/2020/09/brioni_fw20-ad-campaign_2.jpg?crop=0px%2C254px%2C1813px%2C1210px&resize=640%2C415', 2);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, pic_url, fk_email_id) VALUES ('Ryan', 'Gosling', 39, 'M', 'Super famous but taking a break', 'I like to dance and sing.', 'https://i.pinimg.com/originals/a9/6a/54/a96a54e176936073ea46b1811c97fa6c.jpg', 3);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, pic_url, fk_email_id) VALUES ('George', 'Clooney', 59, 'M', 'Multi-hyphenate global star', 'I love Lake Como.', 'https://data.whicdn.com/images/23065186/original.jpg', 4);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, pic_url, fk_email_id) VALUES ('Justin', 'Bieber', 26, 'M', 'Singer', 'I love church.', 'https://cdn.shopify.com/s/files/1/0747/3829/products/mC0326_f328b3f8-d3b8-4bf5-8bca-c1a0bc0416bb_1024x1024.jpg?v=1571444633', 5);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, pic_url, fk_email_id) VALUES ('Selena', 'Gomez', 28, 'F', 'Singer and Disney Star', 'I love Twitter.', 'https://m.media-amazon.com/images/M/MV5BMjAwNTE2MDMyMl5BMl5BanBnXkFtZTgwMjAyODM3MTI@._V1_.jpg', 6);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, pic_url, fk_email_id) VALUES ('Demi', 'Lovato', 28, 'F', 'Singer and Disney Star', 'I like drama', 'https://i.pinimg.com/originals/9b/6c/b9/9b6cb95fd1f985057ed643be7c74061c.png', 7);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, pic_url, fk_email_id) VALUES ('Gwen', 'Stefani', 51, 'F', 'Singer and Reality Star', 'Im just a girl.', 'https://www.bloginity.com/wp-content/uploads/2011/11/Gwen-Stefani-InStyle-Bloginity-1.jpeg', 8);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, pic_url, fk_email_id) VALUES ('Natalie', 'Portman', 39, 'F', 'Movie Star', 'I like being perfect.', 'https://i.pinimg.com/originals/3d/cb/81/3dcb810171d8f495ea697a4f6ae43afa.png', 9);
+INSERT INTO profile (first_name, last_name, age, gender, celeb_status, bio, pic_url, fk_email_id) VALUES ('Meryl', 'Streep', 71, 'F', 'Movie Star', 'I like looking at all of my Oscars.', 'https://i.pinimg.com/736x/e7/07/7d/e7077d016cbee1f396ddf0f9fe04abbc.jpg', 10);
 
 CREATE TABLE preferences (
   preferences_id SERIAL UNIQUE,

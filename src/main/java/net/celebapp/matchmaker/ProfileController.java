@@ -97,6 +97,9 @@ public class ProfileController {
         if(profileDetails.getCelebStatus() != null) {
             profile.setCelebStatus(profileDetails.getCelebStatus());
         }
+        if(profileDetails.getPicUrl() != null) {
+            profile.setPicUrl(profileDetails.getPicUrl());
+        }
         final ProfileEntity updatedProfile = profileRepository.save(profile);
         return ResponseEntity.ok(updatedProfile);
     }

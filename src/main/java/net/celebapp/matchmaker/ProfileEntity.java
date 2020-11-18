@@ -33,6 +33,9 @@ public class ProfileEntity {
 		@Column(name = "bio", nullable = false)
 		private String bio;
 
+		@Column(name = "picUrl", nullable = false)
+		private String picUrl;
+
 		@Column(name = "fk_email_id", nullable = false)
 		private Integer fkEmailId;
 
@@ -40,13 +43,15 @@ public class ProfileEntity {
 	  
 	    }
 	 
-	    public ProfileEntity(String firstName, String lastName, String gender, Integer age, String celebStatus, String bio, Integer fkEmailId) {
+	    public ProfileEntity(String firstName, String lastName, String gender, Integer age,
+							 String celebStatus, String bio, String picUrl, Integer fkEmailId) {
 	         this.firstName = firstName;
 	         this.lastName = lastName;
 	         this.gender = gender;
 	         this.age = age;
 	         this.celebStatus = celebStatus;
 	         this.bio = bio;
+	         this.picUrl = picUrl;
 	         this.fkEmailId = fkEmailId;
 	    }
 	 
@@ -99,6 +104,13 @@ public class ProfileEntity {
 		}
 		public void setBio(String bio) {
 			this.bio = bio;
+		}
+
+		public String getPicUrl() {
+			return picUrl;
+		}
+		public void setPicUrl(String picUrl) {
+			this.picUrl = picUrl;
 		}
 
 		public Integer getFkEmailId() {
