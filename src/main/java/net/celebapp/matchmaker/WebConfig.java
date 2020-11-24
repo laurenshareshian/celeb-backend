@@ -21,18 +21,4 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         .allowedMethods("GET", "POST", "PUT", "DELETE");
     }
 
-//    @Bean
-//    CorsConfigurationSource corsConfigurationSource() {
-//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        CorsConfiguration config = new CorsConfiguration();
-//        config.setAllowedOrigins(Arrays.asList("*"));
-//        config.setAllowedMethods(Arrays.asList("*"));
-//        config.setAllowedHeaders(Arrays.asList("*"));
-//        config.setAllowCredentials(true);
-//        config.applyPermitDefaultValues();
-//
-//        source.registerCorsConfiguration("/**", config);
-//        return source;
-//    }
-
 }

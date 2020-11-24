@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.transaction.Transactional;
+
 @RestController
 @RequestMapping("/api/matches")
 public class MatchesController {
@@ -25,17 +28,16 @@ public class MatchesController {
 	
 	@GetMapping("/get-all-matches")
 	public List<MatchesEntity> getAllMatches(){
-		List<MatchesEntity> allMatcheslist = matchesRepository.findAll();
-		return allMatcheslist;
+		List<MatchesEntity> allMatchesList = matchesRepository.findAll();
+		return allMatchesList;
 		
 	}
 	
 	@GetMapping("/get-matches/{profileId}")
-	public MatchesEntity getMatchesbyId(@PathVariable(value = "profileId") Integer profileId)
+	public MatchesEntity getMatchesById(@PathVariable(value = "profileId") Integer profileId)
       
 	{
 		MatchesEntity matchesEntity = matchesRepository.findById(profileId).get();
-		
 		return matchesEntity;
 	}
 	
@@ -57,6 +59,12 @@ public class MatchesController {
         return response;
     }
 
+	@DeleteMapping("/unlike/{profileId}/{dreamProfileId}")
+	public String unlike(@PathVariable(value = "profileId") Integer profileId,
+										   @PathVariable(value = "dreamProfileId") Integer dreamProfileId)
 
-
+	{
+		matchesRepository.unlike(profileId, dreamProfileId);
+		return "delete successful";
+	}
 }

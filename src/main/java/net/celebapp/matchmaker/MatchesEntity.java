@@ -12,7 +12,7 @@ public class MatchesEntity {
 		@Id
 	    @Column(name = "fk_profile_id", nullable = false)
 	    private int fkProfileId;
-	    
+
 	    @Column(name = "fk_dream_profile_id", nullable = false)
 	    private int fkDreamProfileId;
 	    

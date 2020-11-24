@@ -25,13 +25,13 @@ public class ProfileController {
 	
 	@GetMapping("/get-all-profiles")
 	public List<ProfileEntity> getAllProfile(){
-		List<ProfileEntity> allProfilelist = profileRepository.findAll();
-		return allProfilelist;
+		List<ProfileEntity> allProfileList = profileRepository.findAll();
+		return allProfileList;
 		
 	}
 	
 	@GetMapping("/get-profile/{profileId}")
-	public ProfileEntity getProfilebyId(@PathVariable(value = "profileId") Integer profileId)
+	public ProfileEntity getProfileById(@PathVariable(value = "profileId") Integer profileId)
       
 	{
 		ProfileEntity profileEntity = profileRepository.findById(profileId).get();
