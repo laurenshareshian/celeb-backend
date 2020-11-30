@@ -22,6 +22,11 @@ import java.util.List;
 	@Query(value = "DELETE FROM matches WHERE fk_profile_id=?1 AND fk_dream_profile_id=?2", nativeQuery = true)
 	void unlike(Integer profileId, Integer dreamProfileId);
 
+	@Modifying
+	@Transactional
+	@Query(value = "UPDATE matches SET message_to_dream_profile = ?3 WHERE fk_profile_id = ?1 and fk_dream_profile_id = ?2", nativeQuery = true)
+	void sendMessage(Integer profileId, Integer dreamProfileId, String messageToDreamProfile);
+
 	MatchesEntity findByFkProfileIdAndFkDreamProfileId(Integer profileId, Integer dreamProfileId);
 
 	}
