@@ -44,7 +44,6 @@ public class ProfileController {
 
     {
         List<ProfileEntity> profileEntity = profileRepository.findAdmirersById(profileId);
-
         return profileEntity;
     }
 

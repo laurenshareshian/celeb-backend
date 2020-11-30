@@ -72,13 +72,13 @@ CREATE TABLE matches (
 );
 
 
-INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (1, 6, 'hi');
-INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (1, 7, 'bye');
-INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (1, 9, 'like');
-INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (2, 8, 'yo');
-INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (2, 9, 'hey');
-INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (3, 9, 'hola');
-INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (6, 1, 'love');
-INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (7, 1, 'heyyy');
-INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (8, 1, 'like');
+INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (1, 6, 'Hey Selena, glad you dumped the Biebs!');
+INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (1, 7, 'Hey Demi, how do you pronounce your name?');
+INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (1, 9, 'Hey Natalie, loved you in Black Swan!');
+INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (2, 8, 'Hi Gwen, you are way more than just a girl to me.');
+INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (2, 9, 'Hi Natalie, I love you.');
+INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (3, 9, 'Natalie - how about we get a drink?');
+INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (6, 1, 'Leo, you love the Earth and I love you.');
+INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (7, 1, 'I luvvved you in Titanic!');
+INSERT INTO matches (fk_profile_id, fk_dream_profile_id, message_to_dream_profile) VALUES (8, 1, 'Leo, am I too old for you?');
 
