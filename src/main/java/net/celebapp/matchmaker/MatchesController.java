@@ -32,16 +32,12 @@ public class MatchesController {
 		return matchesEntity;
 	}
 
-    @GetMapping("/get-messages/{profileId}")
-    public List<MatchesEntity> getMessagesTo(@PathVariable(value = "profileId") Integer profileId) {
-        return matchesRepository.findAll()
-                .stream()
-                .filter(DreamProfileIdEquals(profileId))
-                .filter(this::containsNonTrivialMessage)
-                .collect(Collectors.toList());
-    }
-
-
+	@GetMapping("/get-messages/{profileId}")
+	public List<MatchesEntity> getMessagesTo(@PathVariable(value = "profileId") Integer profileId) {
+		List<MatchesEntity> matchesEntity = matchesRepository.findByFkDreamProfileId(profileId);
+		System.out.println(matchesEntity);
+		return matchesEntity;
+	}
 
     @PostMapping("/create-matches")
     public String createMatches(@RequestBody MatchesEntity match) {

@@ -29,6 +29,8 @@ import java.util.List;
 
 	MatchesEntity findByFkProfileIdAndFkDreamProfileId(Integer profileId, Integer dreamProfileId);
 
+	List <MatchesEntity> findByFkDreamProfileId(Integer dreamProfileId);
+
 	}
 
 
