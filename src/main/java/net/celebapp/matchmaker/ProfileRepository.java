@@ -15,7 +15,7 @@ import java.util.List;
 	@Query(value = "SELECT * FROM matches INNER JOIN profile ON fk_profile_id = profile_id WHERE fk_dream_profile_id = ?1", nativeQuery = true)
 	List<ProfileEntity> findAdmirersById(Integer profileId);
 
-	@Query(value = "SELECT p.profile_id, p.first_name,  p.last_name,  p.age, p.gender, p.celeb_status, p.bio, p.pic_url, p.fk_email_id " +
+	@Query(value = "SELECT p.profile_id, p.first_name,  p.last_name,  p.age, p.gender, p.celeb_status, p.bio, p.pic_url, p.fk_email_id, loves.message_to_dream_profile " +
 			"FROM profile as p INNER JOIN " +
 			"(SELECT * FROM matches WHERE fk_profile_id = ANY " +
 			"(SELECT fk_dream_profile_id FROM matches WHERE fk_profile_id = ?1) " +
